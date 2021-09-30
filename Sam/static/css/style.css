@@ -1,0 +1,36 @@
+.col-sm-3{
+    padding-right: 3px;
+    padding-left: 3px;
+}
+.col-sm-9{
+    padding-right: 3px;
+    padding-left: 3px;
+}
+.col-sm-6{
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 3px;
+}
+.col{
+    padding-right: 3px;
+    padding-left: 3px;
+}
+.btn
+  {
+    background-color: #808F9C;
+  }
+
+.form-control
+{
+    background-color: #B0BCD7;
+    height: 45px;
+    margin-bottom: 3px;
+}
+.row
+  {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+
+
+
