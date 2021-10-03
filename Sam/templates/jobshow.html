@@ -2,7 +2,7 @@
 <html>
     <head>  
         <meta charset="UTF-8">  
-        <title>Employee Records</title>  
+        <title>Job Records</title>  
          {% load static %}  
          <link rel="stylesheet" href="{% static 'css/style.css' %}"/>   
     </head>  
@@ -12,7 +12,7 @@
             <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">
-                        <h1 class="fw-bold"><center>Items Added</center> </h1>
+                        <h1 class="fw-bold"><center>Job Added</center> </h1>
                     </div>
                     <div class="card-body">
 
@@ -20,15 +20,8 @@
                             <thead class="thead-dark">  
                             <tr>  
                                 <th>Item ID</th>  
-                                <th>Item Name</th>  
-                                <th>Item Description</th>  
-                                <th>Item Barcode</th>  
-                                <th>Item Category</th> 
-                                <th>Item Unit Primary</th> 
-                                <th>Item Unit Secondary</th> 
-                                <th>Opening Balance</th>  
-                                <th>Buying Price</th> 
-                                <th>Selling Price</th> 
+                                <th>Job Name</th>  
+                                <th>Job Description</th>  
                                 <th>Add Image 1</th> 
                                 <th>Add Image 2</th> 
                                 <th>Add Image 3</th> 
@@ -36,24 +29,17 @@
                             </tr>  
                             </thead>  
                             <tbody>  
-                                 {% for i  in itemz %}  
+                                 {% for i  in jobz %}  
                             <tr>  
                                 <td>{{ i.id }}</td> 
-                                <td>{{ i.item_name  }}</td>  
-                                <td>{{ i.item_desc }}</td> 
-                                <td>{{ i.item_barcode }}</td> 
-                                <td>{{ i.item_category }}</td> 
-                                <td>{{ i.item_unit_prim }}</td> 
-                                <td>{{ i.item_unit_sec }}</td> 
-                                <td>{{ i.open_balance }}</td> 
-                                <td>{{ i.buying_price }}</td> 
-                                <td>{{ i.sell_price }}</td> 
-                
-                                {% if i.image1 and i.image2 and i.image3 and i.image4 %}
-                                    <td><img src="{{ i.image1.url }}" alt="" width="100" ></td>
-                                    <td><img src="{{ i.image2.url }}" alt="" width="100" ></td>
-                                    <td><img src="{{ i.image3.url }}" alt="" width="100" ></td>
-                                    <td><img src="{{ i.image4.url }}" alt="" width="100" ></td>
+                                <td>{{ i.job_name}}</td>  
+                                <td>{{ i.job_desc }}</td> 
+                               
+                                {% if i.imag1 and i.imag2 and i.imag3 and i.imag4 %}
+                                    <td><img src="{{ i.imag1.url }}" alt="" width="100" ></td>
+                                    <td><img src="{{ i.imag2.url }}" alt="" width="100" ></td>
+                                    <td><img src="{{ i.imag3.url }}" alt="" width="100" ></td>
+                                    <td><img src="{{ i.imag4.url }}" alt="" width="100" ></td>
                                                             
                                 {% else %}
                                     <td><img src="{% static 'uploads/item.png' %}" alt="" width="100"></td>
@@ -63,9 +49,9 @@
                                  {% endif %}
                                 
                                  <td>
-                                    <a href="{% url 'edit-item' i.id %}" >EDIT</a></td>
+                                    <a href="{% url 'edit-job' i.id %}" >EDIT</a></td>
                                     
-                                   <td><a href="{% url 'delete-item' i.id %}">DELETE</a></td> 
+                                   
                                 
                                 
                                 <!-- <td>  
@@ -85,6 +71,6 @@
        
         <br>  
         <br>  
-        <center><a href="/items" >Add New Record</a></center>  
+        <center><a href="/jobadd" >Add New Job</a></center>  
         </body>  
 </html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <meta charset="UTF-8">  
+        <title>Job Registration</title>  
+        {% load static %}  
+       <link rel="stylesheet" href="{% static '/css/style.css' %}"/>   
+       <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>  
+
+    
+<body>
+    <section style="padding-top:30px">
+      <div class="container">
+        <button type="button"  style="border-radius:12px;" class="btn  btn-lg btn-block"><b><p style="font-size: 50px;">Registration </p></b></button>
+         &emsp;
+        <button type="button"  style="border-radius:12px;" class="btn  btn-sm btn-block"><b><p style="font-size: 30px;">Job Registration</p></b></button>
+        <br>
+      </div>
+    
+      <form action="/jobadd" enctype="multipart/form-data" method="POST">
+        {% csrf_token %} 
+        <div class="container-sm ">
+  
+          <!-- <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Job ID" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="" >
+            </div>
+          </div> -->
+  
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Job Name" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="job_name"  placeholder="" >
+            </div>
+          </div>
+  
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Job Description" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="job_desc"  placeholder="" >
+            </div>
+          </div>
+          
+        </div> 
+        <div class="container">
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text" style="border-radius:12px;" class="form-control"  placeholder="Add Image" >
+            </div>
+            <div class="col">
+              <input type="file" id="myFile" style="border-radius:12px;" class="form-control" name="imag1"  placeholder="Image-1" >
+            </div>
+            <div class="col">
+              <input type="file" id="myFile" style="border-radius:12px;" class="form-control" name="imag2" placeholder="Image-2" >
+            </div>
+            <div class="col">
+              <input type="file" id="myFile" style="border-radius:12px;" class="form-control" name="imag3" placeholder="Image-3" >
+            </div>
+            <div class="col">
+              <input type="file" id="myFile" style="border-radius:12px;" class="form-control" name="imag4"  placeholder="Image-4" >
+            </div>
+          </div>
+          <script>
+            function myFunction() {
+              var x = document.getElementById("myFile");
+              x.disabled = true;
+            }
+            </script> 
+  
+        </div>
+  
+        <div class="container">
+          <div class="row" style="padding-top: 150px;"> 
+            <div class="col-sm-6">
+              <button type="submit" style="border-radius: 12px;" class="btn btn-lg btn-block">Submit </button>
+           </div>
+           <div class="col-sm-6">
+            <button type="submit" style="border-radius: 12px;" class="btn btn-lg btn-block">Submit & Go to Home Page</button>
+           </div>
+          </div>
+        </div>
+      </form>  
+    </section>
+    </body>
+    
+    
+
+    </html>
