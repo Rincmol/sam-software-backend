@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <meta charset="UTF-8">  
+        <title>Job Records</title>  
+         {% load static %}  
+         <link rel="stylesheet" href="{% static 'css/style.css' %}"/>   
+    </head>  
+
+    <body>  
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="fw-bold"><center>Job Added</center> </h1>
+                    </div>
+                    <div class="card-body">
+
+                        <table border="2" class="table table-striped table-bordered table-sm">  
+                            <thead class="thead-dark">  
+                            <tr>  
+                                <th>Item ID</th>  
+                                <th>Job Name</th>  
+                                <th>Job Description</th>  
+                                <th>Add Image 1</th> 
+                                <th>Add Image 2</th> 
+                                <th>Add Image 3</th> 
+                                <th>Add Image 4</th> 
+                            </tr>  
+                            </thead>  
+                            <tbody>  
+                                 {% for i  in jobz %}  
+                            <tr>  
+                                <td>{{ i.id }}</td> 
+                                <td>{{ i.job_name}}</td>  
+                                <td>{{ i.job_desc }}</td> 
+                               
+                                {% if i.imag1 and i.imag2 and i.imag3 and i.imag4 %}
+                                    <td><img src="{{ i.imag1.url }}" alt="" width="100" ></td>
+                                    <td><img src="{{ i.imag2.url }}" alt="" width="100" ></td>
+                                    <td><img src="{{ i.imag3.url }}" alt="" width="100" ></td>
+                                    <td><img src="{{ i.imag4.url }}" alt="" width="100" ></td>
+                                                            
+                                {% else %}
+                                    <td><img src="{% static 'uploads/item.png' %}" alt="" width="100"></td>
+                                    <td><img src="{% static 'uploads/item.png' %}" alt="" width="100"></td>
+                                    <td><img src="{% static 'uploads/item.png' %}" alt="" width="100"></td>
+                                    <td><img src="{% static 'uploads/item.png' %}" alt="" width="100"></td>
+                                 {% endif %}
+                                
+                                 <td>
+                                    <a href="{% url 'edit-job' i.id %}" >EDIT</a></td>
+                                    
+                                   
+                                
+                                
+                                <!-- <td>  
+                                    <a href="/edit/{{ sam_item.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+                                    <a href="/delete/{{ sam_item.id }}">Delete</a>  
+                                </td>   -->
+                            </tr>  
+                        {% endfor %}  
+                            </tbody>  
+                        </table>  
+                    </div>
+                </div>
+            </div>
+        </div>
+                       
+                        
+       
+        <br>  
+        <br>  
+        <center><a href="/jobadd" >Add New Job</a></center>  
+        </body>  
+</html>

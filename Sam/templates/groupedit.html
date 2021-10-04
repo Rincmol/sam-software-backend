@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <meta charset="UTF-8">  
+        <title>Edit Item</title>  
+        {% load static %}  
+       <link rel="stylesheet" href="{% static '/css/style.css' %}"/>   
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>  
+
+    <body>
+        <section style="padding-top:30px">
+          <div class="container">
+            <button type="button"  style="border-radius:12px;" class="btn  btn-lg btn-block"><b><p style="font-size: 50px;">Registration </p></b></button>
+             &emsp;
+            <button type="button"  style="border-radius:12px;" class="btn  btn-sm btn-block"><b><p style="font-size: 30px;">Group Update</p></b></button>
+            <br>
+          </div>
+        
+          <form action="" method="POST">
+            <div class="container-sm ">
+                {% csrf_token %}
+              <!-- <div class="row" style="padding-top: 5px;">
+                <div class="col-sm-3">
+                  <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Group ID" >
+                </div>
+                <div class="col-sm-9">
+                  <input type="text " style="border-radius:12px;" class="form-control"  placeholder="" >
+                </div>
+              </div> -->
+      
+              <div class="row" style="padding-top: 5px;">
+                <div class="col-sm-3">
+                  <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Group Name" >
+                </div>
+                <div class="col-sm-9">
+                  <input type="text " style="border-radius:12px;" class="form-control" name="group_name" value="{{gp.group_name}}" placeholder="" >
+                </div>
+              </div>
+      
+              <div class="row" style="padding-top: 5px;">
+                <div class="col-sm-3">
+                  <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Category" >
+                </div>
+                <div class="col-sm-9">
+                  <input type="text " style="border-radius:12px;" class="form-control" name="category" value="{{gp.category}}" placeholder="" >
+                </div>
+              </div>
+              
+            </div> 
+      
+      
+            <div class="container">
+              <div class="row" style="padding-top: 150px;"> 
+                <div class="col-sm-6">
+                  <button type="submit" style="border-radius: 12px;" class="btn btn-lg btn-block">Update</button>
+               </div>
+               <div class="col-sm-6">
+                <button type="submit" style="border-radius: 12px;" class="btn btn-lg btn-block">Submit & Go to Home Page</button>
+               </div>
+              </div>
+            </div>
+          </form>  
+        </section>
+        </body>
+</html>

@@ -63,9 +63,9 @@
                                  {% endif %}
                                 
                                  <td>
-                                    <a href="#" >EDIT</a></td>
+                                    <a href="{% url 'edit-item' i.id %}" >EDIT</a></td>
                                     
-                                   <td><a href="#">DELETE</a></td> 
+                                   <td><a href="{% url 'delete-item' i.id %}">DELETE</a></td> 
                                 
                                 
                                 <!-- <td>  

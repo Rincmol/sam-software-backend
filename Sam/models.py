@@ -46,6 +46,9 @@ class Customer(models.Model):
     credit_lim_am   =   models.TextField(max_length=100)
     credit_lim_dur  =   models.TextField(max_length=100)
 
+    class Meta:  
+        db_table = "sam_customer" 
+
 class Supplier(models.Model):
     customer_name   =   models.TextField(max_length=100)
     vat_reg_no      =   models.TextField(max_length=100)
@@ -62,6 +65,8 @@ class Supplier(models.Model):
     credit_lim_dur  =   models.TextField(max_length=100)
     bank_acc_name   =   models.TextField(max_length=100)
     bank_acc_no     =   models.TextField(max_length=100)
+    class Meta:  
+        db_table = "sam_supplier" 
 
 
 
@@ -71,53 +76,62 @@ class User(models.Model):
     password    =   models.CharField(max_length=15)
 
 
-    class Login(models.Model):
-        username    =   models.CharField(max_length=15)
-        password    =   models.CharField(max_length=15)
+class Login(models.Model):
+    username    =   models.CharField(max_length=15)
+    password    =   models.CharField(max_length=15)
 
-    class Job(models.Model):
-        job_name    =   models.TextField(max_length=100)
-        job_desc    =   models.TextField(max_length=500,null=True)
-        imag1       =   models.ImageField(upload_to=filepath, null=True,blank=True)
-        imag2       =   models.ImageField(upload_to=filepath, null=True,blank=True)
-        imag3       =   models.ImageField(upload_to=filepath, null=True,blank=True)
-        imag4       =   models.ImageField(upload_to=filepath, null=True,blank=True)
-
-    class Employee(models.Model):
-        emp_name     =    models.TextField(max_length=100)
-        nationality  =    models.TextField(max_length=100)
-        birth_date   =    models.TextField(max_length=100)
-        joining_date =    models.TextField(max_length=100)
-        designation  =    models.TextField(max_length=100)
-        department   =    models.TextField(max_length=100)
-        salary_categ =    models.TextField(max_length=100)
-        passport_no  =    models.TextField(max_length=100)
-        expir        =    models.TextField(max_length=100)
-        id_no        =    models.TextField(max_length=100)
-        id_expir     =    models.TextField(max_length=100)
-        img1         =   models.ImageField(upload_to=filepath, null=True,blank=True)
-        img2         =   models.ImageField(upload_to=filepath, null=True,blank=True)
-        img3         =   models.ImageField(upload_to=filepath, null=True,blank=True)
-        img4         =   models.ImageField(upload_to=filepath, null=True,blank=True)
-        basic        =    models.TextField(max_length=100)
-        housing      =    models.TextField(max_length=100)
-        transportation =    models.TextField(max_length=100)
-        food         =    models.TextField(max_length=100)
-        mobile       =    models.TextField(max_length=100)
-        other        =    models.TextField(max_length=100)
-        netpay       =    models.TextField(max_length=100)
+class Job(models.Model):
+    job_name    =   models.TextField(max_length=100)
+    job_desc    =   models.TextField(max_length=500,null=True)
+    imag1       =   models.ImageField(upload_to=filepath, null=True,blank=True)
+    imag2       =   models.ImageField(upload_to=filepath, null=True,blank=True)
+    imag3       =   models.ImageField(upload_to=filepath, null=True,blank=True)
+    imag4       =   models.ImageField(upload_to=filepath, null=True,blank=True)
+    class Meta:  
+        db_table = "sam_job" 
 
 
-    class Group(models.Model):
-        group_name    =    models.TextField(max_length=100)
-        category      =    models.TextField(max_length=100)
+class Employee(models.Model):
+    emp_name     =    models.TextField(max_length=100)
+    nationality  =    models.TextField(max_length=100)
+    birth_date   =    models.TextField(max_length=100)
+    joining_date =    models.TextField(max_length=100)
+    designation  =    models.TextField(max_length=100)
+    department   =    models.TextField(max_length=100)
+    salary_categ =    models.TextField(max_length=100)
+    passport_no  =    models.TextField(max_length=100)
+    expir        =    models.TextField(max_length=100)
+    id_no        =    models.TextField(max_length=100)
+    id_expir     =    models.TextField(max_length=100)
+    img1         =   models.ImageField(upload_to=filepath, null=True,blank=True)
+    img2         =   models.ImageField(upload_to=filepath, null=True,blank=True)
+    img3         =   models.ImageField(upload_to=filepath, null=True,blank=True)
+    img4         =   models.ImageField(upload_to=filepath, null=True,blank=True)
+    basic        =    models.TextField(max_length=100)
+    housing      =    models.TextField(max_length=100)
+    transportation =    models.TextField(max_length=100)
+    food         =    models.TextField(max_length=100)
+    mobile       =    models.TextField(max_length=100)
+    other        =    models.TextField(max_length=100)
+    netpay       =    models.TextField(max_length=100)
+    class Meta:  
+        db_table = "sam_employee" 
 
 
-    class Ledger(models.Model):
-        ledger_name    =    models.TextField(max_length=100)
-        group_name     =    models.TextField(max_length=100)
-        category       =    models.TextField(max_length=100)
-        opening_bal    =    models.TextField(max_length=100)
+class Group(models.Model):
+    group_name    =    models.TextField(max_length=100)
+    category      =    models.TextField(max_length=100)
+    class Meta:  
+        db_table = "sam_group" 
+
+
+class Ledger(models.Model):
+    ledger_name    =    models.TextField(max_length=100)
+    group_name     =    models.TextField(max_length=100)
+    category       =    models.TextField(max_length=100)
+    opening_bal    =    models.TextField(max_length=100)
+    class Meta:  
+        db_table = "sam_ledger" 
         
 
 
