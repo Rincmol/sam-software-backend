@@ -191,7 +191,7 @@ def CustomerAdd(request):
 
 
 def CustomerView(request):
-    cus = Customer.objects.get(id=id) 
+    cus = Customer.objects.all() 
     context = {'cus':cus}
     return render(request,'customerview.html',context)
 
@@ -220,7 +220,7 @@ def customerEdit(request,id):
 def customerDelete(request, id):  
     cus = Customer.objects.get(id=id)  
     cus.delete()  
-    return redirect("/suppliershow")  
+    return redirect("/customerview")  
     # context = {'cus':cus}
     # return render(request,'customeredit.html',context)
 
@@ -246,7 +246,7 @@ def SupplierAdd(request):
         sup.bank_acc_no = request.POST.get('bank_acc_no')
 
         sup.save()
-        return redirect("/supplier")  
+        return redirect("/suppliershow")  
     return render(request,'supplier.html')
 
 def suppliershow(request):

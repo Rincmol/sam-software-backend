@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <meta charset="UTF-8">  
+        <title>Employee </title>  
+        {% load static %}  
+       <link rel="stylesheet" href="{% static '/css/style.css' %}"/>   
+       <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>  
+
+    
+<body>
+    <section style="padding-top:30px">
+      <div class="container">
+        <button type="button"  style="border-radius:12px;" class="btn  btn-sm btn-block"><b><p style="font-size: 30px;">Employee  Update</p></b></button>
+        <br>
+      </div>
+    
+      <form method="POST" enctype="multipart/form-data" action="">
+        {% csrf_token %} 
+        <div class="container-sm ">
+  
+          <!-- <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Company ID" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="" >
+            </div>
+          </div> -->
+  
+  
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Employee Name" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="emp_name" value="{{emp.emp_name}}"  placeholder="" >
+            </div>
+          </div>
+  
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Nationality" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="nationality" value="{{emp.nationality}}" placeholder="" >
+            </div>
+          </div>
+  
+  
+  
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Birth Date" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="birth_date" value="{{emp.birth_date}}" placeholder="" >
+            </div>
+          </div>
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Joining Date" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="joining_date" value="{{emp.joining_date}}"  placeholder="" >
+            </div>
+          </div>
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Designation" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="designation" value="{{emp.designation}}" placeholder="" >
+            </div>
+          </div>
+          <div class="row" style="padding-top: 5px;"> 
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Department" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="department" value="{{emp.department}}" placeholder="" >
+            </div>
+          </div>
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Salary Category" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="salary_categ" value="{{emp.salary_categ}}" placeholder="" >
+            </div>
+          </div>
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Passort Details  " >
+            </div>
+            <div class="col">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="No" >
+            </div>
+            <div class="col">
+              <input type="text " style="border-radius:12px;" class="form-control" name="passport_no" value="{{emp.passport_no}}" placeholder="" >
+            </div>
+            <div class="col">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Expires On" >
+            </div>
+            <div class="col">
+              <input type="text " style="border-radius:12px;" class="form-control" name="expir" value="{{emp.expir}}" placeholder="" >
+            </div>
+          </div>
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Id Details" >
+            </div>
+            <div class="col">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="No" >
+            </div>
+            <div class="col">
+              <input type="text " style="border-radius:12px;" class="form-control" name="id_no" value="{{emp.id_no}}" placeholder="" >
+            </div>
+            <div class="col">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Expires On" >
+            </div>
+            <div class="col">
+              <input type="text " style="border-radius:12px;" class="form-control" name="id_expir" value="{{emp.id_expir}}" placeholder="" >
+            </div>
+          </div>   
+        </div> 
+        <div class="container">
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text" style="border-radius:12px;" class="form-control"  placeholder="Add Image" >
+            </div>
+            {% if emp.img1 and emp.img2 and emp.img3 and emp.img4 %}
+                <div class="col" ><td><img src="{{ emp.img1.url }}" alt="" width="50" ></td></div>
+                <div class="col"> <td><img src="{{ emp.img2.url }}" alt="" width="100" ></td></div>
+                <div class="col"> <td><img src="{{ emp.img3.url }}" alt="" width="100" ></td></div>
+                <div class="col-3"><td><img src="{{ emp.img4.url }}" alt="" width="100" ></td></div>
+                {% endif %}
+                <div class="col-3"></div>
+            <div class="col">
+              <input type="file" id="myFile" style="border-radius:12px;" class="form-control" name="img1" placeholder="Image-1" >
+            </div>
+            <div class="col">
+              <input type="file" id="myFile" style="border-radius:12px;" class="form-control" name="img2" placeholder="Image-2" >
+            </div>
+            <div class="col">
+              <input type="file" id="myFile" style="border-radius:12px;" class="form-control" name="img3" placeholder="Image-3" >
+            </div>
+            <div class="col">
+              <input type="file" id="myFile" style="border-radius:12px;" class="form-control" name="img4" placeholder="Image-4" >
+            </div>
+          </div>
+          <script>
+            function myFunction() {
+              var x = document.getElementById("myFile");
+              x.disabled = true;
+            }
+          </script>          
+        </div>
+        <div class="container">
+
+          <div class="row" style="padding-top: 35px;">
+            <div class="col-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Basic  " >
+            </div>
+            
+            <div class="col-3">
+              <input type="text " style="border-radius:12px;" class="form-control" name="basic" value="{{emp.basic}}" placeholder="" >
+            </div>
+            <div class="col-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Housing" >
+            </div>
+            <div class="col-3">
+              <input type="text " style="border-radius:12px;" class="form-control" name="housing" value="{{emp.housing}}" placeholder="" >
+            </div>
+          </div>
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Transportation" >
+            </div>
+            
+            <div class="col-3">
+              <input type="text " style="border-radius:12px;" class="form-control" name="transportation" value="{{emp.transportation}}" placeholder="" >
+            </div>
+            <div class="col-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Food" >
+            </div>
+            <div class="col-3">
+              <input type="text " style="border-radius:12px;" class="form-control" name="food" value="{{emp.food}}" placeholder="" >
+            </div>
+          </div>
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Mobile" >
+            </div>
+            
+            <div class="col-3">
+              <input type="text " style="border-radius:12px;" class="form-control" name="mobile" value="{{emp.mobile}}" placeholder="" >
+            </div>
+            <div class="col-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Other" >
+            </div>
+            <div class="col-3">
+              <input type="text " style="border-radius:12px;" class="form-control" name="other" value="{{emp.other}}" placeholder="" >
+            </div>
+          </div>
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Net Pay" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="netpay" value="{{emp.netpay}}" placeholder="" >
+            </div>
+          </div>
+
+        </div>
+  
+        </div>
+  
+        
+  
+        <div class="container">
+          <div class="row" style="padding-top: 15px;"> 
+            <div class="col-sm-6">
+              <button type="submit" style="border-radius: 12px;" class="btn btn-lg btn-block">Update </button>
+           </div>
+           <div class="col-sm-6">
+            <button type="submit" style="border-radius: 12px;" class="btn btn-lg btn-block">Submit & Go to Home Page</button>
+           </div>
+          </div>
+        </div>
+      </form>  
+    </section>
+    </body>
+    
+    
+    
+
+</html>

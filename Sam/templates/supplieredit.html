@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <meta charset="UTF-8">  
+        <title>Supplier Registration</title>  
+        {% load static %}  
+       <link rel="stylesheet" href="{% static '/css/style.css' %}"/>   
+       <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>  
+
+    
+<body>
+    <section style="padding-top:30px">
+      <div class="container">
+        <button type="button"  style="border-radius:12px;" class="btn  btn-sm btn-block"><b><p style="font-size: 30px;">Supplier  Registration</p></b></button>
+        <br>
+      </div>
+    
+      <form method="POST" action="">
+        {% csrf_token %} 
+        <div class="container-sm ">
+  
+          <!-- <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Company ID" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="" >
+            </div>
+          </div> -->
+  
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Customer Name" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="customer_name" value="{{sup.customer_name}}"  placeholder="" >
+            </div>
+          </div>
+  
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Vat Reg No" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="vat_reg_no" value="{{sup.vat_reg_no}}"  placeholder="" >
+            </div>
+          </div>
+  
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="CR No" >
+            </div>
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control" name="cr_no" value="{{sup.cr_no}}" placeholder="" >
+            </div>
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Expired On" >
+            </div>
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control" name="expired_on" value="{{sup.expired_on}}" placeholder="" >
+            </div>
+          </div>
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Land Phone No" >
+            </div>
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control" name="land_phone" value="{{sup.land_phone}}" placeholder="" >
+            </div>
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Mob No" >
+            </div>
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control" name="mobile" value="{{sup.mobile}}" placeholder="" >
+            </div>
+          </div>
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Contact Person" >
+            </div>
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control" name="contact_person" value="{{sup.contact_person}}" placeholder="" >
+            </div>
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Mob No" >
+            </div>
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control" name="contact_mobile" value="{{sup.contact_mobile}}" placeholder="" >
+            </div>
+          </div>
+  
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Email Id" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="email" value="{{sup.email}}" placeholder="" >
+            </div>
+          </div>
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Location & Address" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="address" value="{{sup.address}}" placeholder="" >
+            </div>
+          </div>
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Opening Balance" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="open_balance" value="{{sup.open_balance}}" placeholder="" >
+            </div>
+          </div>
+          <div class="row" style="padding-top: 5px;"> 
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Credit Limit Amount" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="credit_lim_am" value="{{sup.credit_lim_am}}" placeholder="" >
+            </div>
+          </div>
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Credit Limit Duration" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="credit_lim_dur" value="{{sup.credit_lim_dur}}" placeholder="" >
+            </div>
+          </div>
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"   placeholder="Bank Account Name" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="bank_acc_name" value="{{sup.bank_acc_name}}" placeholder="" >
+            </div>
+          </div>
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-sm-3">
+              <input type="text " style="border-radius:12px;" class="form-control"  placeholder="Bank Account Number" >
+            </div>
+            <div class="col-sm-9">
+              <input type="text " style="border-radius:12px;" class="form-control" name="bank_acc_no" value="{{sup.bank_acc_no}}" placeholder="" >
+            </div>
+          </div>
+        </div> 
+  
+        <div class="container">
+          <div class="row" style="padding-top: 15px;"> 
+            <div class="col-sm-6">
+              <button type="submit" style="border-radius: 12px;" class="btn btn-lg btn-block">Update</button>
+           </div>
+           <div class="col-sm-6">
+            <button type="submit" style="border-radius: 12px;" class="btn btn-lg btn-block">Submit & Go to Home Page</button>
+           </div>
+          </div>
+        </div>
+      </form>  
+    </section>
+    </body>
+    
+    
+
+</html>
